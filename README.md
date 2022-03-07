@@ -16,8 +16,9 @@ optional arguments:
   --out OUT, -o OUT  out put file
 
 结果：
-class	total	number	average	percentage
-gene	92390	84	1099.88	54.36%
-CDS	77934	100	779.34	45.86%
-rRNA	9052	8	1131.5	5.33%
-tRNA	10667	37	288.3	6.28%
+|class|total|number|average|percentage|
+|-----|-----|-----|-----|-----|
+|gene||92390|84|1099.88|54.36%|
+|CDS|77934|100|779.34|45.86%|
+|rRNA|9052|8|1131.5|5.33%|
+|tRNA|10667|37|288.3|6.28%|
