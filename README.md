@@ -10,10 +10,14 @@ version: 1.0.0
 email:xby@bioyigene.com 
 
 optional arguments:
-  -h, --help         show this help message and exit
-  -f F               fasta file
-  -a A               Annotation file
-  --out OUT, -o OUT  out put file
+ 
+ -h, --help         show this help message and exit
+ 
+ -f F               fasta file
+ 
+ -a A               Annotation file
+ 
+ --out OUT, -o OUT  out put file
 
 结果：
 |class|total|number|average|percentage|
