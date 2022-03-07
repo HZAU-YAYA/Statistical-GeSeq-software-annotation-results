@@ -7,7 +7,7 @@ usage: statistic.py [-h] [-f F] [-a A] [--out OUT]
 name:statistic.py -- 统计分析GeSeq软件注释结果
 attention: python statistic.py -f genomic.fasta -a genomic.gff3 -o out
 version: 1.0.0
-contact: Boya Xu <xby@bioyigene.com>\ 
+email:xby@bioyigene.com 
 
 optional arguments:
   -h, --help         show this help message and exit
