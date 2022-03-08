@@ -6,7 +6,7 @@ import sys
 
 
 LOG = logging.getLogger(__name__)
-__version__ = "1.0.0"    #设置版本信息
+__version__ = "1.0.1"    #设置版本信息
 __author__ = ("Boya Xu",)   #输入作者信息
 __email__ = "xby@bioyigene.com"
 __all__ = []
@@ -91,18 +91,18 @@ def statistic(gff, genomic, outfile):
     percentage_t = round((sum_t * 100.00)/length, 2)
     percentage_r = round((sum_r * 100.00)/length, 2)
     percentage_c = round((sum_c * 100.00)/length, 2)
-    site_g = {"gene": f"gene\t{sum_g}\t{num_g}\t{len_g_p}\t{percentage_g}%"}
-    site_c = {"CDS": f"CDS\t{sum_c}\t{num_c}\t{len_c_p}\t{percentage_c}%"}
-    site_r = {"rRNA": f"rRNA\t{sum_r}\t{num_r}\t{len_r_p}\t{percentage_r}%"}
-    site_t = {"tRNA": f"tRNA\t{sum_t}\t{num_t}\t{len_t_p}\t{percentage_t}%"}
+    site_g = {"gene": "gene\t{}\t{}\t{}\t{}%".format(sum_g, num_g, len_g_p, percentage_g)}
+    site_c = {"CDS": "CDS\t{}\t{}\t{}\t{}%".format(sum_c, num_c, len_c_p, percentage_c)}
+    site_r = {"rRNA": "rRNA\t{}\t{}\t{}\t{}%".format(sum_r, num_r, len_r_p, percentage_r)}
+    site_t = {"tRNA": "tRNA\t{}\t{}\t{}\t{}%".format(sum_t, num_t, len_t_p, percentage_t)}
     f = open(outfile, 'w+')
-    output = 'class\ttotal\tnumber\taverage\tpercentage\n{gene}\n{CDS}\n{rRNA}\n{tRNA}\n'
-    output = output.format(**site_g, **site_c, **site_r, **site_t)
+    output = 'class\ttotal\tnumber\taverage\tpercentage\n{}\n{}\n{}\n{}\n'
+    output = output.format(site_g['gene'], site_c['CDS'], site_r['rRNA'], site_t['tRNA'])
     f.write(output)
     f.close()
     return
-
-
+ 
+    
 def main():   #主函数，执行函数
     logging.basicConfig(stream=sys.stderr, level=logging.INFO, format="[%(levelname)s] %(message)s")
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=''' 
